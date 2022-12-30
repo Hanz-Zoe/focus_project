@@ -11,7 +11,7 @@ define op = Character("Olaf Pogrom", color="#FFC000")
 define og = Character("Oliver Garfield", color="#722F37")
 define vl = Character("Victor Laurent", color="#FFA500")
 define dl = Character("Daphny Laurent", color="#E0115F") 
-define li = Character("Player", color="#E9DFE0")
+define li = Character("[name]", color="#E9DFE0")
 ################################################################################
 ### Misc. 
 ################################################################################
@@ -28,6 +28,10 @@ label start:
             jump game
 
     label game: 
+    
+    $ name = renpy.input("what is your name?")
+    if name == "":
+        $ name = "Lilith"
 
         scene bg room 
         show elieen happy 
