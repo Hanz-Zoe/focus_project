@@ -12,32 +12,30 @@ define og = Character("Oliver Garfield", color="#722F37")
 define vl = Character("Victor Laurent", color="#FFA500")
 define dl = Character("Daphny Laurent", color="#E0115F") 
 define li = Character("[name]", color="#E9DFE0")
+
+$ affection_points = 0
+$ affection_points += 1
 ################################################################################
-### Misc. 
+## Functions. 
 ################################################################################
+init python: 
+    def change_stataffection(stat, amount):
+        if amount > 0: 
+            renpy.notify("[n] aumentou a afeição por você" )
+        else: 
+            enpy.notfy("[n] diminiu a afeição por você")
+    stat += amount
+    return stat.    
 
 ################################################################################
-## Main Menu and Initialization, the game will start here. 
+## Conditions 
+################################################################################
+$ affection = True 
+
+################################################################################
+## Game. 
 ################################################################################
 label start: 
-
-    n "Welcome, to Focus!" 
-
-    menu: 
-        "Start Game":
-            jump game
-
-    label game: 
-    
-    $ name = renpy.input("what is your name?")
-    if name == "":
-        $ name = "Lilith"
-
-        scene bg room 
-        show elieen happy 
-
-        n "It was still cold when Lilith woke up, her feet freezing outside her blanket. She yawned scanning the room."
-        li "Damn, I had a nightmare. Again"
 
 
 return
