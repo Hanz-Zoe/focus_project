@@ -1,7 +1,7 @@
 init python: 
 
     def changeAffectionHans(stat, suitor1_relationship):
-            if suitor1_relationship > 0 
+            if suitor1_relationship > 0:
                 suitor1_relationship += 1 
                 renpy.notify("A afeição de [h] aumentou!")
             else: 
@@ -9,7 +9,7 @@ init python:
             stat += suitor1_relationship
             return stat 
     def changeAffectionArthur(stat, suitor2_relationship): 
-            if suitor2_relationship > 0 
+            if suitor2_relationship > 0: 
                 suitor2_relationship += 1
                 renpy.notify("A afeição de [a] aumentou!")
             else: 
