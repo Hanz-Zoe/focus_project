@@ -13,27 +13,82 @@ define vl = Character("Victor Laurent", color="#FFA500")
 define dl = Character("Daphny Laurent", color="#E0115F") 
 define li = Character("[name]", color="#E9DFE0")
 
-$ affection_points = 0
-$ affection_points += 1
+init: 
+    $ suitor1_relationship = 0 
+    $ suitor2_relationship = 0 
+    $ suitor3_relationship = 0 
+    $ suitor4_relationship = 0 
+    $ suitor5_relationship = 0 
+    $ suitor6_relationship = 0 
 ################################################################################
 ## Functions. 
 ################################################################################
-
-#Função que governa a feição dos personagens.# 
-init python: 
-    def change_stataffection(stat, amount):
+label hans_afeicao: 
+    $ def changeStateAffection(stat, amount):
         if amount > 0: 
-            renpy.notify("[n] aumentou a afeição por você" )
+            suitor1_relationship += 1
+            renpy.notify("a afeição de [h] aumentou!")
         else: 
-            renpy.notify("[n] diminiu a afeição por você")
-            stat += amount
+            renpy.notify("a afeição de [h] diminuiu")
+            stat += amount 
             return stat
-
+    return 
+label artur_afeicao: 
+    $ def changeStateAffection(stat, amount):
+        if amount > 0: 
+            suitor2_relationship += 1
+            renpy.notify("a afeição de [a] aumentou!")
+        else: 
+            renpy.notify("a afeição de [a] diminuiu")
+            stat += amount 
+            return stat
+    return 
+label luna_afeicao: 
+    $ def changeStateAffection(stat, amount):
+        if amount > 0: 
+            suitor3_relationship += 1
+            renpy.notify("a afeição de [lm] aumentou!")
+        else: 
+            renpy.notify("a afeição de [lm] diminuiu")
+            stat += amount 
+            return stat
+    return 
+label oliver_garfield: 
+    $ def changeStateAffection(stat, amount):
+        if amount > 0: 
+            suitor4_relationship += 1
+            renpy.notify("a afeição de [og] aumentou!")
+        else: 
+            renpy.notify("a afeição de [og] diminuiu")
+            stat += amount 
+            return stat
+    return 
+label victor_laurent: 
+    $ def changeStateAffection(stat, amount):
+        if amount > 0: 
+            suitor5_relationship += 1
+            renpy.notify("a afeição de [vl] aumentou!")
+        else: 
+            renpy.notify("a afeição de [vl] diminuiu")
+            stat += amount 
+            return stat
+    return 
+label daphny_laurent: 
+    $ def changeStateAffection(stat,amount): 
+        if amount > 0:
+            suitor6_relationship += 1 
+            renpy.notify("a afeição de [dl] aumentou!")
+        else: 
+            renpy.notify("a afeição de [dl] diminuiu")
+            stat += amount
+            return stat 
+    return 
+            
 
 ################################################################################
 ## Conditions 
 ################################################################################
-$ affection = True 
+ 
 
 ################################################################################
 ## Game. 
