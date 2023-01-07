@@ -18,14 +18,17 @@ $ affection_points += 1
 ################################################################################
 ## Functions. 
 ################################################################################
+
+#Função que governa a feição dos personagens.# 
 init python: 
     def change_stataffection(stat, amount):
         if amount > 0: 
             renpy.notify("[n] aumentou a afeição por você" )
         else: 
-            enpy.notfy("[n] diminiu a afeição por você")
-    stat += amount
-    return stat.    
+            renpy.notify("[n] diminiu a afeição por você")
+            stat += amount
+            return stat
+
 
 ################################################################################
 ## Conditions 
