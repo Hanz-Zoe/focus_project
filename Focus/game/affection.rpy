@@ -21,7 +21,7 @@ init python:
                 suitor3_relationship += 1
                 renpy.notify("A afeição de [lm] aumentou!")
             else: 
-                renpy.notify("A afeição de [lm] diminuiu!")!
+                renpy.notify("A afeição de [lm] diminuiu!")
             stat += suitor3_relationship
             return stat 
     $ def changeAffectionOliver(stat, suitor4_relationship):
